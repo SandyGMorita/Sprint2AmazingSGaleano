@@ -1,20 +1,27 @@
-const cardContainer = document.getElementById("cardContainer");
+//const cardContainer = document.getElementById("cardContainer")
 
 //console.log(apiData);
 
-let tarjetas = ""
+//console.log(apiData.events)
 
 
-for (elemento of apiData.events) {
+    //for (let event of apiData.events) {
+        
+        //console.log(event);
+        
+  //  }
 
-    tarjetas += '<div class="card" style="width: 18rem;">
-    <img src="${elemento.image}" class="card-img-top" alt="imagen">
-    <div class="card-body">
-      <h5 class="card-title">${elemento.name}</h5>
-      <p class="card-text">${elemento.description}.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>' 
-    
-}
-cardContainer.innerHTML = tarjetas
+  const cardContainer = document.getElementById("cardContainer");
+
+ let templateCard = ""
+  for(let event of apiData.events) {
+templateCard += `<div class="card" style="width: 18rem;">
+<div class="card-body">
+<img src="${event.image}" class="card-img-top" alt="...">
+<h5 class="card-title">${event.name}</h5>
+<a href="#" class="btn btn-primary">Go somewhere</a>
+<p class="card-text">${event.description}</p>
+</div>
+</div>`
+  }
+  cardContainer.innerHTML = templateCard
